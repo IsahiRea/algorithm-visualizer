@@ -11,7 +11,9 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
 - **index.html**: Main HTML file that includes the canvas and controls.
 - **css/**: Contains CSS files for styling the visualizer.
 - **js/**: Contains the JavaScript logic, organized into modules:
-  - `main.js`: Main controller file.
+  - `main.js`: Initialize the app and delegate tasks.
+  - `router.js`: Responsible for determining whether the user selected an algorithm or a data structure
+  - `ui.js`: Handle the dropdowns, button states, and any other UI elements
   - `canvas.js`: Handles canvas rendering and utility functions.
   - `controls.js`: Handles user input and sorting control flags.
   - `algorithms/`: Contains different sorting algorithms.
@@ -19,17 +21,18 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
     - `selectionSort.js`
   - `dataStructures/`: Contains different data structures.
     - `stack.js`
+    - `queue.js`
 
 ### Running the Project Locally
 1. **Install Node.js**:  
   Ensure that [Node.js](https://nodejs.org/) is installed on your machine.
 2. **Install Project Dependencies**: 
   Open your terminal and navigate to the project directory. Then, install the necessary dependencies by running:
-  npm install
+  `npm install`
 3. **Start the Development Server**: 
   After the dependencies are installed, run the following command to start the Vite development server:
-  npm run dev
-  This will start a local server, and you can access the project in your browser at: http://localhost:3000
+  `npm run dev`\
+  This will start a local server, and you can access the project in your browser.
 4. **Stop the Development Server**: 
   To stop the Vite development server, go back to the terminal where the server is running and press Ctrl + C
 
@@ -41,5 +44,6 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
 
 ## Future Improvements
 - Add more algorithms (e.g., Quick Sort, Merge Sort, etc.).
+- Add more Data Structures (e.g., Linked List, Trees, etc.).
 - Add user input for custom array sizes and values.
 - Add speed control for faster or slower visualization.

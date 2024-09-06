@@ -1,3 +1,6 @@
+import { stopVisual, isActive, startVisual, sleep } from '../controls.js';
+
+
 // Stack visualization
 let stack = [];
 const canvas = document.getElementById('visualizerCanvas');
@@ -19,27 +22,42 @@ function drawStack() {
 }
 
 // Stack operations
-export function visualizeStack() {
+export function visualizeStack(array) {
     stack = [];
-    performStackOperations();
+    performStackOperations(array);
 }
 
-function performStackOperations() {
-    pushToStack(5);
-    pushToStack(10);
-    pushToStack(15);
-    setTimeout(popFromStack, 1000);
-    setTimeout(popFromStack, 2000);
-    setTimeout(pushToStack.bind(null, 20), 3000);
+async function performStackOperations(array) {
+    startVisual();
+
+    const len = 6;
+    for(let i = 0; i < len; i++) {
+        await pushToStack(array[i]);
+        
+        while (!isActive()){
+            await sleep(200);  // Stop sorting if the flag is false
+        } 
+    }
+
+    for(let i = 0; i < len; i++) {
+        await popFromStack();
+        
+        while (!isActive()){
+            await sleep(200);  // Stop sorting if the flag is false
+        } 
+    }
+    stopVisual();
 }
 
 // Stack methods
-function pushToStack(value) {
+async function pushToStack(value) {
     stack.push(value);
     drawStack();
+    await sleep(1000);  // Pause for visualization
 }
 
-function popFromStack() {
+async function popFromStack() {
     stack.pop();
     drawStack();
+    await sleep(1000);  // Pause for visualization
 }

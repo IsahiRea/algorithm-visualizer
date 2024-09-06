@@ -1,12 +1,14 @@
-import { isSortingActive, startSorting } from '../controls.js';
+import { stopVisual, isActive, startVisual, sleep } from '../controls.js';
 
-export async function selectionSort(array, drawArray, stopSorting) {
-    startSorting();  // Set sorting flag
+export async function selectionSort(array, drawArray) {
+    startVisual();  // Set sorting flag
     const len = array.length;
     for (let i = 0; i < len; i++) {
         let minIndex = i;
         for (let j = i + 1; j < len; j++) {
-            if (!isSortingActive()) return;  // Stop sorting if the flag is false
+            while (!isActive()) {
+                await sleep(200);  // Stop sorting if the flag is false
+            } 
             if (array[j] < array[minIndex]) {
                 minIndex = j;
             }
@@ -17,9 +19,7 @@ export async function selectionSort(array, drawArray, stopSorting) {
             await sleep(200);  // Pause for visualization
         }
     }
-    stopSorting();  // Set sorting flag to false when done
+    stopVisual();  // Set sorting flag to false when done
 }
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+

@@ -1,13 +1,17 @@
-let isSorting = true;
+let isRunning = true;
 
-export function stopSorting() {
-    isSorting = false;
+export function stopVisual() {
+    isRunning = false;
 }
 
-export function isSortingActive() {
-    return isSorting;
+export function isActive() {
+    return isRunning;
 }
 
-export function startSorting() {
-    isSorting = true;
+export function startVisual() {
+    isRunning = true;
+}
+
+export function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
