@@ -18,6 +18,20 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
     - `bubbleSort.js`
     - `selectionSort.js`
 
+### Running the Project Locally
+1. **Install Node.js**:  
+  Ensure that [Node.js](https://nodejs.org/) is installed on your machine.
+2. **Install Project Dependencies**: 
+  Open your terminal and navigate to the project directory. Then, install the necessary dependencies by running:
+  npm install
+3. **Start the Development Server**: 
+  After the dependencies are installed, run the following command to start the Vite development server:
+  npm run dev
+
+  This will start a local server, and you can access the project in your browser at: http://localhost:3000
+4. **Stop the Development Server**: 
+  To stop the Vite development server, go back to the terminal where the server is running and press Ctrl + C
+
 ## How to Use
 1. Open `index.html` in a web browser.
 2. Select an algorithm from the dropdown.
