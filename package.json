@@ -1,0 +1,17 @@
+{
+  "name": "algorithm-visualizer",
+  "version": "1.0.0",
+  "description": "This project is a simple web-based visualizer for algorithms like Bubble Sort and Selection Sort. It uses HTML, CSS, and JavaScript to visualize the execution of the algorithms step by step.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.4.3"
+  }
+}
