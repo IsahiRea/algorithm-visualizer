@@ -11,15 +11,29 @@
 <h1>Data Structures & Algorithms Visualizer</h1>
 
 <div class="controls">
+    <label for="visualType">Choose Type:</label>
+    <select id="visualType" aria-label="Visualization Type">
+        <option value="algorithm">Algorithm</option>
+        <option value="dataStructure">Data Structure</option>
+    </select>
+
     <label for="algo">Choose Algorithm:</label>
     <select id="algo" aria-label="Algorithm Selection">
         <option value="bubbleSort">Bubble Sort</option>
         <option value="selectionSort">Selection Sort</option>
     </select>
 
+    <label for="dataStructure">Choose Data Structure:</label>
+    <select id="dataStructure" aria-label="Data Structure Selection" style="display: none;">
+        <option value="stack">Stack</option>
+        <option value="queue">Queue</option>
+        <option value="linkedList">Linked List</option>
+    </select>
+
     <button id="startBtn">Start</button>
     <button id="stopBtn">Stop</button>
 </div>
+
 
 <canvas id="visualizerCanvas" width="800" height="400"></canvas>
 

@@ -3,7 +3,7 @@
 This project is a simple web-based visualizer for algorithms like Bubble Sort and Selection Sort. It uses HTML, CSS, and JavaScript to visualize the execution of the algorithms step by step.
 
 ## Features
-- **Bubble Sort** and **Selection Sort** algorithms with step-by-step visualization.
+- Data structures and algorithms with step-by-step visualization.
 - Responsive canvas that scales well on smaller screens.
 - Modular structure, making it easy to add more algorithms in the future.
 
@@ -17,6 +17,8 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
   - `algorithms/`: Contains different sorting algorithms.
     - `bubbleSort.js`
     - `selectionSort.js`
+  - `dataStructures/`: Contains different data structures.
+    - `stack.js`
 
 ### Running the Project Locally
 1. **Install Node.js**:  
@@ -27,7 +29,6 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
 3. **Start the Development Server**: 
   After the dependencies are installed, run the following command to start the Vite development server:
   npm run dev
-
   This will start a local server, and you can access the project in your browser at: http://localhost:3000
 4. **Stop the Development Server**: 
   To stop the Vite development server, go back to the terminal where the server is running and press Ctrl + C
