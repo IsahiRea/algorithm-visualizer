@@ -1,7 +1,12 @@
 import { stopVisual, isActive, startVisual, sleep } from '../controls.js';
+import { drawArray, generateRandomArray } from '../canvas.js';
 
-export async function bubbleSort(array, drawArray) {
+export async function bubbleSort() {
     startVisual();  // Set sorting flag
+
+    let array = generateRandomArray();
+    drawArray(array);
+
     const len = array.length;
     for (let i = 0; i < len; i++) {
         for (let j = 0; j < len - i - 1; j++) {

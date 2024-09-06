@@ -1,7 +1,12 @@
 import { stopVisual, isActive, startVisual, sleep } from '../controls.js';
+import { drawArray, generateRandomArray } from '../canvas.js';
 
-export async function selectionSort(array, drawArray) {
+export async function selectionSort() {
     startVisual();  // Set sorting flag
+
+    let array = generateRandomArray();
+    drawArray(array);
+
     const len = array.length;
     for (let i = 0; i < len; i++) {
         let minIndex = i;

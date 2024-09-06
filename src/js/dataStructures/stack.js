@@ -1,38 +1,20 @@
 import { stopVisual, isActive, startVisual, sleep } from '../controls.js';
-
-
-// Stack visualization
-let stack = [];
-const canvas = document.getElementById('visualizerCanvas');
-const ctx = canvas.getContext('2d');
-
-// Function to draw the stack
-function drawStack() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const rectWidth = 80;
-    const rectHeight = 30;
-    for (let i = 0; i < stack.length; i++) {
-        ctx.fillStyle = '#28a745';
-        ctx.fillRect(100, canvas.height - (i + 1) * rectHeight, rectWidth, rectHeight);
-        ctx.strokeStyle = '#000';
-        ctx.strokeRect(100, canvas.height - (i + 1) * rectHeight, rectWidth, rectHeight);
-        ctx.fillStyle = '#fff';
-        ctx.fillText(stack[i], 120, canvas.height - i * rectHeight - 15);
-    }
-}
+import { drawStack, generateRandomArray } from '../canvas.js';
 
 // Stack operations
-export function visualizeStack(array) {
-    stack = [];
-    performStackOperations(array);
+export function visualizeStack() {
+    performStackOperations();
 }
 
-async function performStackOperations(array) {
+async function performStackOperations() {
     startVisual();
+
+    let array = generateRandomArray();
+    let stack = [];
 
     const len = 6;
     for(let i = 0; i < len; i++) {
-        await pushToStack(array[i]);
+        await pushToStack(array[i], stack);
         
         while (!isActive()){
             await sleep(200);  // Stop sorting if the flag is false
@@ -40,7 +22,7 @@ async function performStackOperations(array) {
     }
 
     for(let i = 0; i < len; i++) {
-        await popFromStack();
+        await popFromStack(stack);
         
         while (!isActive()){
             await sleep(200);  // Stop sorting if the flag is false
@@ -50,14 +32,14 @@ async function performStackOperations(array) {
 }
 
 // Stack methods
-async function pushToStack(value) {
+async function pushToStack(value, stack) {
     stack.push(value);
-    drawStack();
+    drawStack(stack);
     await sleep(1000);  // Pause for visualization
 }
 
-async function popFromStack() {
+async function popFromStack(stack) {
     stack.pop();
-    drawStack();
+    drawStack(stack);
     await sleep(1000);  // Pause for visualization
 }

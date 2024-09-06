@@ -1,38 +1,21 @@
 import { stopVisual, isActive, startVisual, sleep } from '../controls.js';
+import { drawQueue, generateRandomArray } from '../canvas.js';
 
-
-// Queue visualization
-let queue = [];
-const canvas = document.getElementById('visualizerCanvas');
-const ctx = canvas.getContext('2d');
-
-// Function to draw the queue
-function drawQueue() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const rectWidth = 80;
-    const rectHeight = 30;
-    for (let i = 0; i < queue.length; i++) {
-        ctx.fillStyle = '#007bff';
-        ctx.fillRect(100 + i * (rectWidth + 10), canvas.height / 2 - rectHeight / 2, rectWidth, rectHeight);
-        ctx.strokeStyle = '#000';
-        ctx.strokeRect(100 + i * (rectWidth + 10), canvas.height / 2 - rectHeight / 2, rectWidth, rectHeight);
-        ctx.fillStyle = '#fff';
-        ctx.fillText(queue[i], 125 + i * (rectWidth + 10), canvas.height / 2);
-    }
-}
 
 // Queue operations
-export function visualizeQueue(array) {
-    queue = [];
-    performQueueOperations(array);
+export function visualizeQueue() {
+    performQueueOperations();
 }
 
-async function performQueueOperations(array) {
+async function performQueueOperations() {
     startVisual();
+
+    let array = generateRandomArray();
+    let queue = [];
 
     const len = 6;
     for(let i = 0; i < len; i++) {
-        await enqueue(array[i]);
+        await enqueue(array[i], queue);
         
         while (!isActive()){
             await sleep(200);  // Stop sorting if the flag is false
@@ -40,7 +23,7 @@ async function performQueueOperations(array) {
     }
 
     for(let i = 0; i < len; i++) {
-        await dequeue();
+        await dequeue(queue);
         
         while (!isActive()){
             await sleep(200);  // Stop sorting if the flag is false
@@ -51,16 +34,16 @@ async function performQueueOperations(array) {
 }
 
 // Queue methods
-async function enqueue(value) {
+async function enqueue(value, queue) {
     queue.push(value);
-    drawQueue();
+    drawQueue(queue);
     await sleep(1000);  // Pause for visualization
 }
 
-async function dequeue() {
+async function dequeue(queue) {
     if (queue.length > 0) {
         queue.shift();  // Remove the first element
-        drawQueue();
+        drawQueue(queue);
         await sleep(1000);  // Pause for visualization
     }
 }
