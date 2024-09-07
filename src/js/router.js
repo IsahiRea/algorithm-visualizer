@@ -2,6 +2,7 @@ import { bubbleSort } from './algorithms/bubbleSort.js';
 import { selectionSort } from './algorithms/selectionSort.js';
 import { visualizeStack } from './dataStructures/stack.js';
 import { visualizeQueue } from './dataStructures/queue.js';
+import { visualizeLinkedList } from './dataStructures/linkedList.js';
 
 
 export function handleSelection() {
@@ -31,5 +32,7 @@ function handleDataStructure() {
         visualizeStack();
     } else if (dataStructureSelect === 'queue') {
         visualizeQueue();
+    }else if (dataStructureSelect === 'linked list') {
+        visualizeLinkedList();
     }
 }
