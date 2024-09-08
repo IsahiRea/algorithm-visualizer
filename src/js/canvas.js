@@ -1,6 +1,12 @@
 const canvas = document.getElementById('visualizerCanvas');
 const ctx = canvas.getContext('2d');
 
+export function generateRandomArray(size = 20, maxValue = 100) {
+    return Array.from({ length: size }, () => Math.floor(Math.random() * maxValue));
+}
+
+
+// Sorting ---------------------------------------------------------------
 export function drawArray(array) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const barWidth = canvas.width / array.length;
@@ -11,12 +17,7 @@ export function drawArray(array) {
     }
 }
 
-export function generateRandomArray(size = 20, maxValue = 100) {
-    return Array.from({ length: size }, () => Math.floor(Math.random() * maxValue));
-}
-
-
-// Function to draw the stack
+// Stack ---------------------------------------------------------------
 export function drawStack(stack) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const rectWidth = 80;
@@ -31,7 +32,7 @@ export function drawStack(stack) {
     }
 }
 
-// Function to draw the queue
+// Queue ---------------------------------------------------------------
 export function drawQueue(queue) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const rectWidth = 80;
@@ -46,6 +47,7 @@ export function drawQueue(queue) {
     }
 }
 
+// Linked List ---------------------------------------------------------------
 // Draw a single node
 function drawNode(x, y, value) {
     // Node width and height
@@ -100,12 +102,7 @@ export function drawLinkedList(LL) {
     }
 }
 
-// Set node radius and vertical/horizontal spacing
-const NODE_RADIUS = 20;
-const VERTICAL_SPACING = 80;
-const HORIZONTAL_SPACING = 40;
-
-// Draw the entire tree
+// Trees ---------------------------------------------------------------
 export function drawTree(root) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (!root || !root.root) return;
@@ -116,6 +113,7 @@ export function drawTree(root) {
 
 // Function to draw a line (edge between nodes)
 function drawLine(x1, y1, x2, y2) {
+    const NODE_RADIUS = 20;
 
     ctx.beginPath();
     ctx.moveTo(x1, y1 + NODE_RADIUS);  // Start at bottom of parent node
@@ -126,6 +124,8 @@ function drawLine(x1, y1, x2, y2) {
 
 // Function to draw a node
 function drawTreeNode(node, x, y, xOffset) {
+    const NODE_RADIUS = 20;
+    const VERTICAL_SPACING = 80;
 
     if (!node) return;
 
@@ -171,6 +171,95 @@ function drawCircle(x, y, radius, value) {
     ctx.textBaseline = 'middle';
     ctx.fillText(value, x, y);
 }
+
+// Hash Table ---------------------------------------------------------------
+export function drawHashTable(HT) {
+
+    const BUCKET_WIDTH = 150;
+    const BUCKET_HEIGHT = 50;
+    const HORIZONTAL_SPACING = 20;
+    const VERTICAL_SPACING = 20;
+    const START_X = 50;
+    const START_Y = 50;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
+
+    let x = START_X;
+    let y = START_Y;
+    let index = 0;  // To count the number of buckets and layout them in rows
+
+    // Loop through the Hash Table (Map) and draw each key-value pair
+    for (let [key, value] of HT) {
+        // Draw the bucket (rectangle)
+        ctx.fillStyle = '#007bff';
+        ctx.fillRect(x, y, BUCKET_WIDTH, BUCKET_HEIGHT);
+
+        // Draw the outline of the bucket
+        ctx.strokeStyle = '#000';
+        ctx.strokeRect(x, y, BUCKET_WIDTH, BUCKET_HEIGHT);
+
+        // Display the key-value pair inside the bucket
+        ctx.fillStyle = '#fff';
+        ctx.font = '16px Arial';
+        ctx.textAlign = 'left';
+
+        // Draw the key and value in the center of the bucket
+        ctx.fillText(`Key: ${key}`, x + 10, y + 20);     // Draw key
+        ctx.fillText(`Value: ${value}`, x + 10, y + 40); // Draw value
+
+        // Move to the next position
+        x += BUCKET_WIDTH + HORIZONTAL_SPACING;
+        index++;
+
+        // If the row is full, move to the next row
+        if (x + BUCKET_WIDTH > canvas.width) {
+            x = START_X;  // Reset to the start of the new row
+            y += BUCKET_HEIGHT + VERTICAL_SPACING;  // Move down
+        }
+    }
+}
+
+// Heap ---------------------------------------------------------------
+export function drawHeap(heap) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
+
+    if (heap.length === 0) return;
+
+    // Start drawing the heap from the root (index 0)
+    drawHeapNode(heap, 0, canvas.width / 2, 50, canvas.width / 4);
+}
+
+// Recursive function to draw each node in the heap
+function drawHeapNode(heap, index, x, y, xOffset) {
+    const NODE_RADIUS = 20;
+    const VERTICAL_SPACING = 80;
+    
+    if (index >= heap.length) return;
+
+    // Draw left and right children (if they exist)
+    const leftIndex = 2 * index + 1;
+    const rightIndex = 2 * index + 2;
+
+    // Draw the left child if it exists
+    if (leftIndex < heap.length) {
+        const leftX = x - xOffset;
+        const leftY = y + VERTICAL_SPACING;
+        drawLine(x, y, leftX, leftY);  // Draw line from parent to left child
+        drawHeapNode(heap, leftIndex, leftX, leftY, xOffset / 2);  // Recursively draw the left child
+    }
+
+    // Draw the right child if it exists
+    if (rightIndex < heap.length) {
+        const rightX = x + xOffset;
+        const rightY = y + VERTICAL_SPACING;
+        drawLine(x, y, rightX, rightY);  // Draw line from parent to right child
+        drawHeapNode(heap, rightIndex, rightX, rightY, xOffset / 2);  // Recursively draw the right child
+    }
+
+    // Draw the current node as a circle with the value inside
+    drawCircle(x, y, NODE_RADIUS, heap[index]);
+}
+
 
 
 

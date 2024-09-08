@@ -3,8 +3,12 @@ import { selectionSort } from './algorithms/selectionSort.js';
 import { visualizeStack } from './dataStructures/stack.js';
 import { visualizeQueue } from './dataStructures/queue.js';
 import { visualizeLinkedList } from './dataStructures/linkedList.js';
+import { visualizeHT } from './dataStructures/hashTable.js';
+import { visualizeHeap } from './dataStructures/heap.js';
 import { visualizeBST } from './trees/BST.js';
 import { visualizeDFS } from './graph/dfs.js';
+
+
 
 export function handleSelection() {
     const visualTypeSelect = document.getElementById('visualType').value;
@@ -40,6 +44,12 @@ function handleDataStructure() {
         visualizeQueue();
     }else if (dataStructureSelect === 'linked list') {
         visualizeLinkedList();
+    }
+    else if (dataStructureSelect === 'hash table') {
+        visualizeHT();
+    }
+    else if (dataStructureSelect === 'heap') {
+        visualizeHeap();
     }
 }
 
