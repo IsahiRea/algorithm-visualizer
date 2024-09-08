@@ -3,7 +3,8 @@ import { selectionSort } from './algorithms/selectionSort.js';
 import { visualizeStack } from './dataStructures/stack.js';
 import { visualizeQueue } from './dataStructures/queue.js';
 import { visualizeLinkedList } from './dataStructures/linkedList.js';
-
+import { visualizeBST } from './trees/BST.js';
+import { visualizeDFS } from './graph/dfs.js';
 
 export function handleSelection() {
     const visualTypeSelect = document.getElementById('visualType').value;
@@ -12,6 +13,11 @@ export function handleSelection() {
         handleAlgorithm();
     } else if (visualTypeSelect === 'dataStructure') {
         handleDataStructure();
+    } else if (visualTypeSelect === 'tree') {
+        handleTreeStructure();
+    }
+    else if (visualTypeSelect === 'graph') {
+        handleGraphStructure();
     }
 }
 
@@ -34,5 +40,21 @@ function handleDataStructure() {
         visualizeQueue();
     }else if (dataStructureSelect === 'linked list') {
         visualizeLinkedList();
+    }
+}
+
+function handleTreeStructure() {
+    const treeSelect = document.getElementById('tree').value;
+
+    if (treeSelect === 'BST') {
+        visualizeBST();
+    }
+}
+
+function handleGraphStructure() {
+    const treeSelect = document.getElementById('graph').value;
+
+    if (treeSelect === 'dfs') {
+        visualizeDFS();
     }
 }
