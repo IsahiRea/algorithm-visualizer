@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep } from '../controls.js';
-import { drawQueue, generateRandomArray } from '../canvas.js';
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
+import { drawQueue } from '../canvas/queue.js';
 
 
 // Queue operations
@@ -37,13 +37,13 @@ async function performQueueOperations() {
 async function enqueue(value, queue) {
     queue.push(value);
     drawQueue(queue);
-    await sleep(1000);  // Pause for visualization
+    await sleep(800);  // Pause for visualization
 }
 
 async function dequeue(queue) {
     if (queue.length > 0) {
         queue.shift();  // Remove the first element
         drawQueue(queue);
-        await sleep(1000);  // Pause for visualization
+        await sleep(800);  // Pause for visualization
     }
 }

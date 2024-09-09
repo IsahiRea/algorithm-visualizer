@@ -1,5 +1,5 @@
-import { startVisual, stopVisual, sleep, isActive } from "../controls";
-import { drawHashTable ,generateRandomArray } from "../canvas";
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
+import { drawHashTable } from "../canvas/hashTable.js";
 
 export function visualizeHT() {
     performHashOperations()
@@ -12,11 +12,11 @@ async function performHashOperations() {
     
     let hashMap = new Map();
 
-    const len = 6
+    const len = 8
     for(let i = 0; i < len; i++) {
         hashMap.set(array[i]*2, array[i])
         drawHashTable(hashMap);
-        await sleep(2000);
+        await sleep(800);
 
         while (!isActive) {
             await sleep(200);

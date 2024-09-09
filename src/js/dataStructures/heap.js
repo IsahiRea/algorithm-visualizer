@@ -1,8 +1,8 @@
 // Since JS doesn't have an implemented Heap DS, we must have a workaround.
 // Or to use another language
 
-import { stopVisual, isActive, startVisual, sleep } from "../controls";
-import { drawHeap, generateRandomArray } from "../canvas";
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
+import { drawHeap } from "../canvas/heap.js";
 
 
 /* 
@@ -97,13 +97,13 @@ async function performHeapOperations() {
     const array = generateRandomArray();
     const heap = []
 
-    const len = 6
+    const len = 7
     for(let i = 0; i < len; i++) {
         
         heappush(heap, array[i])
         console.log(heap)
         drawHeap(heap);
-        await sleep(2000);
+        await sleep(800);
 
         while (!isActive) {
             await sleep(200);

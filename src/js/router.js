@@ -5,8 +5,8 @@ import { visualizeQueue } from './dataStructures/queue.js';
 import { visualizeLinkedList } from './dataStructures/linkedList.js';
 import { visualizeHT } from './dataStructures/hashTable.js';
 import { visualizeHeap } from './dataStructures/heap.js';
-import { visualizeBST } from './trees/BST.js';
-import { visualizeDFS } from './graph/dfs.js';
+import { visualizeBST } from './dataStructures/BST.js';
+import { visualizeGraph } from './dataStructures/graph.js';
 
 
 
@@ -17,11 +17,6 @@ export function handleSelection() {
         handleAlgorithm();
     } else if (visualTypeSelect === 'dataStructure') {
         handleDataStructure();
-    } else if (visualTypeSelect === 'tree') {
-        handleTreeStructure();
-    }
-    else if (visualTypeSelect === 'graph') {
-        handleGraphStructure();
     }
 }
 
@@ -48,23 +43,13 @@ function handleDataStructure() {
     else if (dataStructureSelect === 'hash table') {
         visualizeHT();
     }
+    else if (dataStructureSelect === 'BST') {
+        visualizeBST();
+    }
     else if (dataStructureSelect === 'heap') {
         visualizeHeap();
     }
-}
-
-function handleTreeStructure() {
-    const treeSelect = document.getElementById('tree').value;
-
-    if (treeSelect === 'BST') {
-        visualizeBST();
-    }
-}
-
-function handleGraphStructure() {
-    const treeSelect = document.getElementById('graph').value;
-
-    if (treeSelect === 'dfs') {
-        visualizeDFS();
+    else if (dataStructureSelect === 'graph') {
+        visualizeGraph();
     }
 }

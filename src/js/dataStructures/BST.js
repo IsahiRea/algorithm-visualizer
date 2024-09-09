@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep } from "../controls";
-import { drawTree, generateRandomArray } from "../canvas";
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
+import { drawTree } from "../canvas/BST.js";
 
 // Tree node class
 class TreeNode {
@@ -90,12 +90,12 @@ async function performTreeOperations() {
 
     let BST = new binarySearchTree();
 
-    const len = 6;
+    const len = 7;
     for(let i = 0; i < len; i++) {
         
         BST.insert(array[i]);
         drawTree(BST);
-        await sleep(1000);
+        await sleep(800);
         
         while (!isActive()){
             await sleep(200);  // Stop sorting if the flag is false

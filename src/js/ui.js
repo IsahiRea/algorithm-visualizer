@@ -13,28 +13,10 @@ export function initializeUI() {
             // Show the algorithm dropdown
             algoSelect.style.display = 'block';
             dataStructureSelect.style.display = 'none';
-            treeSelect.style.display = 'none';
-            graphSelect.style.display = 'none';
         } else if (visualTypeSelect.value === 'dataStructure') {
             // Show the data structure dropdown
             algoSelect.style.display = 'none';
             dataStructureSelect.style.display = 'block';
-            treeSelect.style.display = 'none';
-            graphSelect.style.display = 'none';
-        }
-        else if(visualTypeSelect.value === 'tree') {
-            // Show the tree structure dropdown
-            algoSelect.style.display = 'none';
-            dataStructureSelect.style.display = 'none';
-            treeSelect.style.display = 'block';
-            graphSelect.style.display = 'none';
-        }
-        else if(visualTypeSelect.value === 'graph') {
-            // Show the tree structure dropdown
-            algoSelect.style.display = 'none';
-            dataStructureSelect.style.display = 'none';
-            treeSelect.style.display = 'none';
-            graphSelect.style.display = 'block';
         }
     });
 
@@ -55,8 +37,6 @@ export function initializeUI() {
     // Set the initial UI state (default is algorithm visible)
     algoSelect.style.display = 'block';
     dataStructureSelect.style.display = 'none';
-    treeSelect.style.display = 'none';
-    graphSelect.style.display = 'none';
 
     stopBtn.style.display = 'block';
     continueBtn.style.display = 'none';

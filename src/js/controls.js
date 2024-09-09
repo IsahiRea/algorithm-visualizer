@@ -15,3 +15,7 @@ export function startVisual() {
 export function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+export function generateRandomArray(size = 20, maxValue = 100) {
+    return Array.from({ length: size }, () => Math.floor(Math.random() * maxValue));
+}

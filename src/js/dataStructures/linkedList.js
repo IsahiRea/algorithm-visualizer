@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep } from "../controls";
-import { drawLinkedList, generateRandomArray } from "../canvas";
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
+import { drawLinkedList } from "../canvas/linkedList.js";
 
 class Node {
     value = null;
@@ -91,11 +91,11 @@ async function performListOperations() {
     drawLinkedList(LL);
     await sleep(2000);
     
-    const len = 6;
+    const len = 7;
     for(let i = 1; i < len; i++) {
         LL.insertEnd(array[i]);
         drawLinkedList(LL);
-        await sleep(2000);
+        await sleep(1000);
         
         while (!isActive()){
             await sleep(200);  // Stop sorting if the flag is false

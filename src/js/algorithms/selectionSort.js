@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep } from '../controls.js';
-import { drawArray, generateRandomArray } from '../canvas.js';
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
+import { drawArray } from '../canvas/sorting.js';
 
 export async function selectionSort() {
     startVisual();  // Set sorting flag
