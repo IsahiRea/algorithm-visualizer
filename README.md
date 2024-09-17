@@ -22,6 +22,11 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
   - `dataStructures/`: Contains different data structures.
     - `stack.js`
     - `queue.js`
+    - `linked list.js`
+    - `hast table.js`
+    - `Binary Search Tree.js`
+    - `heap.js`
+    - `graph.js`
 
 ### Running the Project Locally
 1. **Install Node.js**:  
