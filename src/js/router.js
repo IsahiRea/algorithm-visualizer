@@ -1,5 +1,6 @@
 import { bubbleSort } from './algorithms/bubbleSort.js';
 import { selectionSort } from './algorithms/selectionSort.js';
+import { insertionSort } from './algorithms/insertionSort.js';
 import { visualizeStack } from './dataStructures/stack.js';
 import { visualizeQueue } from './dataStructures/queue.js';
 import { visualizeLinkedList } from './dataStructures/linkedList.js';
@@ -27,6 +28,9 @@ function handleAlgorithm() {
         bubbleSort();
     } else if (algoSelect === 'selectionSort') {
         selectionSort();
+    }
+     else if (algoSelect === 'insertionSort') {
+        insertionSort();
     }
 }
 
