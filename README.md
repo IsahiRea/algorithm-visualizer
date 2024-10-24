@@ -9,13 +9,13 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
 
 ## Project Structure
 - **index.html**: Main HTML file that includes the canvas and controls.
-- **css/**: Contains CSS files for styling the visualizer.
-- **js/**: Contains the JavaScript logic, organized into modules:
+- **app/**: Contains the starting point of the application
   - `main.js`: Initialize the app and delegate tasks.
   - `router.js`: Responsible for determining whether the user selected an algorithm or a data structure
   - `ui.js`: Handle the dropdowns, button states, and any other UI elements
-  - `canvas.js`: Handles canvas rendering and utility functions.
-  - `controls.js`: Handles user input and sorting control flags.
+- **assets/css/**: Contains CSS files for styling the visualizer.
+- **canvas/**: Contains all canvas rendering files
+- **data/**: Contains the JavaScript logic, organized into modules:
   - `algorithms/`: Contains different sorting algorithms.
     - `bubbleSort.js`
     - `selectionSort.js`
@@ -28,7 +28,9 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
     - `Binary Search Tree.js`
     - `heap.js`
     - `graph.js`
-
+  - `shared/`: Contains shared utility functions
+    -`controls.js`: Handles user input and sorting control flags.
+- **canvas**
 ### Running the Project Locally
 1. **Install Node.js**:  
   Ensure that [Node.js](https://nodejs.org/) is installed on your machine.
