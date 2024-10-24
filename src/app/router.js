@@ -1,6 +1,7 @@
 import { bubbleSort } from '../data/algorithms/bubbleSort.js';
 import { selectionSort } from '../data/algorithms/selectionSort.js';
 import { insertionSort } from '../data/algorithms/insertionSort.js';
+import { quickSort } from '../data/algorithms/quickSort.js';
 import { visualizeStack } from '../data/dataStructures/stack.js';
 import { visualizeQueue } from '../data/dataStructures/queue.js';
 import { visualizeLinkedList } from '../data/dataStructures/linkedList.js';
@@ -14,6 +15,7 @@ const algorithmMapping = {
     'bubbleSort': bubbleSort,
     'selectionSort': selectionSort,
     'insertionSort': insertionSort,
+    'quickSort': quickSort,
 };
 
 // Data structure mapping object

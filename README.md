@@ -20,6 +20,7 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
     - `bubbleSort.js`
     - `selectionSort.js`
     - `insertionSort.js`
+    - `quickSort.js`
   - `dataStructures/`: Contains different data structures.
     - `stack.js`
     - `queue.js`
@@ -29,8 +30,7 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
     - `heap.js`
     - `graph.js`
   - `shared/`: Contains shared utility functions
-    -`controls.js`: Handles user input and sorting control flags.
-- **canvas**
+    - `controls.js`: Handles user input and sorting control flags.
 ### Running the Project Locally
 1. **Install Node.js**:  
   Ensure that [Node.js](https://nodejs.org/) is installed on your machine.
@@ -51,6 +51,6 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
 4. Click "Stop" to stop the algorithm in progress.
 
 ## Future Improvements
-- Add more algorithms (e.g., Quick Sort, Merge Sort, etc.).
+- Add more algorithms (e.g. Merge Sort, etc.).
 - Add user input for custom array sizes and values.
 - Add speed control for faster or slower visualization.
