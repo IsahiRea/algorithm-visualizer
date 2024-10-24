@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
-import { drawQueue } from '../canvas/queue.js';
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../shared/controls.js';
+import { drawQueue } from '../../canvas/queue.js';
 
 
 // Queue operations

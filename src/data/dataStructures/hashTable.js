@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
-import { drawHashTable } from "../canvas/hashTable.js";
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../shared/controls.js';
+import { drawHashTable } from "../../canvas/hashTable.js";
 
 export function visualizeHT() {
     performHashOperations()

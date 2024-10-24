@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
-import {drawGraph } from "../canvas/graph.js";
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../shared/controls.js';
+import {drawGraph } from "../../canvas/graph.js";
 
 class Graph {
     constructor() {

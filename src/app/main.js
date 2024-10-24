@@ -1,6 +1,6 @@
 import { initializeUI } from './ui.js';
 import { handleSelection } from './router.js';
-import { stopVisual, startVisual } from './controls.js';
+import { stopVisual, startVisual } from '../data/shared/controls.js';
 
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');

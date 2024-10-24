@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
-import { drawTree } from "../canvas/BST.js";
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../shared/controls.js';
+import { drawTree } from "../../canvas/bst.js";
 
 // Tree node class
 class TreeNode {

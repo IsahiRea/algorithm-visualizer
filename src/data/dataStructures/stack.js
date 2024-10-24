@@ -1,5 +1,5 @@
-import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../controls.js';
-import { drawStack} from '../canvas/stack.js';
+import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../shared/controls.js';
+import { drawStack} from '../../canvas/stack.js';
 
 // Stack operations
 export function visualizeStack() {
