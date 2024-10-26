@@ -21,6 +21,7 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
     - `selectionSort.js`
     - `insertionSort.js`
     - `quickSort.js`
+    - `mergeSort.js`
   - `dataStructures/`: Contains different data structures.
     - `stack.js`
     - `queue.js`
@@ -51,6 +52,6 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
 4. Click "Stop" to stop the algorithm in progress.
 
 ## Future Improvements
-- Add more algorithms (e.g. Merge Sort, etc.).
+- Add more sorting algorithms
 - Add user input for custom array sizes and values.
 - Add speed control for faster or slower visualization.
