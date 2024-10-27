@@ -3,6 +3,7 @@ import { selectionSort } from '../data/algorithms/selectionSort.js';
 import { insertionSort } from '../data/algorithms/insertionSort.js';
 import { quickSort } from '../data/algorithms/quickSort.js';
 import { mergeSort } from '../data/algorithms/mergeSort.js';
+import { heapSort } from '../data/algorithms/heapSort.js';
 import { visualizeStack } from '../data/dataStructures/stack.js';
 import { visualizeQueue } from '../data/dataStructures/queue.js';
 import { visualizeLinkedList } from '../data/dataStructures/linkedList.js';
@@ -18,6 +19,7 @@ const algorithmMapping = {
     'insertionSort': insertionSort,
     'quickSort': quickSort,
     'mergeSort': mergeSort,
+    'heapSort': heapSort, 
 };
 
 // Data structure mapping object
