@@ -4,6 +4,7 @@ import { insertionSort } from '../data/algorithms/insertionSort.js';
 import { quickSort } from '../data/algorithms/quickSort.js';
 import { mergeSort } from '../data/algorithms/mergeSort.js';
 import { heapSort } from '../data/algorithms/heapSort.js';
+import { shellSort } from '../data/algorithms/shellSort.js';
 import { visualizeStack } from '../data/dataStructures/stack.js';
 import { visualizeQueue } from '../data/dataStructures/queue.js';
 import { visualizeLinkedList } from '../data/dataStructures/linkedList.js';
@@ -20,6 +21,7 @@ const algorithmMapping = {
     'quickSort': quickSort,
     'mergeSort': mergeSort,
     'heapSort': heapSort, 
+    'shellSort': shellSort,
 };
 
 // Data structure mapping object
