@@ -6,6 +6,7 @@ import { mergeSort } from '../data/algorithms/mergeSort.js';
 import { heapSort } from '../data/algorithms/heapSort.js';
 import { shellSort } from '../data/algorithms/shellSort.js';
 import { radixSort } from '../data/algorithms/radixSort.js';
+import { bucketSort } from '../data/algorithms/bucketSort.js';
 
 import { visualizeStack } from '../data/dataStructures/stack.js';
 import { visualizeQueue } from '../data/dataStructures/queue.js';
@@ -25,6 +26,7 @@ const algorithmMapping = {
     'heapSort': heapSort, 
     'shellSort': shellSort,
     'radixSort': radixSort,
+    'bucketSort': bucketSort,
 };
 
 // Data structure mapping object
