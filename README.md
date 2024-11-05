@@ -27,6 +27,7 @@ This project is a simple web-based visualizer for algorithms like Bubble Sort an
     - `radixSort.js`
     - `bucketSort.js`
     - `countingSort.js`
+    - `cocktailShakerSort.js`
   - `dataStructures/`: Contains different data structures.
     - `stack.js`
     - `queue.js`
