@@ -10,6 +10,7 @@ import { bucketSort } from '../data/algorithms/bucketSort.js';
 import { countingSort } from '../data/algorithms/countingSort.js';
 import { cocktailShakerSort } from '../data/algorithms/cocktailShakerSort.js';
 import { combSort } from '../data/algorithms/combSort.js';
+import { gnomeSort } from '../data/algorithms/gnomeSort.js';
 
 import { visualizeStack } from '../data/dataStructures/stack.js';
 import { visualizeQueue } from '../data/dataStructures/queue.js';
@@ -33,6 +34,7 @@ const algorithmMapping = {
     'countingSort': countingSort,
     'cocktailShakerSort': cocktailShakerSort,
     'combSort': combSort,
+    'gnomeSort': gnomeSort,
 };
 
 // Data structure mapping object
