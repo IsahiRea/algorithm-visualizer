@@ -11,6 +11,7 @@ import { countingSort } from '../data/algorithms/countingSort.js';
 import { cocktailShakerSort } from '../data/algorithms/cocktailShakerSort.js';
 import { combSort } from '../data/algorithms/combSort.js';
 import { gnomeSort } from '../data/algorithms/gnomeSort.js';
+import { pancakeSort } from '../data/algorithms/pancakeSort.js';
 
 import { visualizeStack } from '../data/dataStructures/stack.js';
 import { visualizeQueue } from '../data/dataStructures/queue.js';
@@ -35,6 +36,7 @@ const algorithmMapping = {
     'cocktailShakerSort': cocktailShakerSort,
     'combSort': combSort,
     'gnomeSort': gnomeSort,
+    'pancakeSort': pancakeSort,
 };
 
 // Data structure mapping object
