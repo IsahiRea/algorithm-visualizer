@@ -19,3 +19,5 @@ stopBtn.addEventListener('click', stopVisual);
 
 // Continue button listener
 continueBtn.addEventListener('click', startVisual);
+
+//TODO: Clear Canvas when selecting a fresh option
