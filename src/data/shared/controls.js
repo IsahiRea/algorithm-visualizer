@@ -1,4 +1,4 @@
-let isRunning = true;
+let isRunning = false;
 
 export function stopVisual() {
     isRunning = false;
@@ -19,3 +19,5 @@ export function sleep(ms) {
 export function generateRandomArray(size = 20, maxValue = 100) {
     return Array.from({ length: size }, () => Math.floor(Math.random() * maxValue));
 }
+
+//TODO: Create a function that check if visual is active

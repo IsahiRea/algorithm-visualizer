@@ -1,5 +1,5 @@
 import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../shared/controls.js';
-import { drawLinkedList } from "../../canvas/linkedList.js";
+import { drawLinkedList } from '../../canvas/linkedList.js';
 
 class Node {
     value = null;

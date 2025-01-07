@@ -42,3 +42,29 @@ function drawHeapNode(heap, index, x, y, xOffset) {
     // Draw the current node as a circle with the value inside
     drawCircle(x, y, NODE_RADIUS, heap[index]);
 }
+
+// Function to draw a circle (node)
+function drawCircle(x, y, radius, value) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+
+    // Draw the value inside the circle
+    ctx.fillStyle = 'black';
+    ctx.font = '16px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(value, x, y);
+}
+
+// Function to draw a line (edge between nodes)
+function drawLine(x1, y1, x2, y2) {
+    ctx.beginPath();
+    ctx.moveTo(x1, y1 + NODE_RADIUS);  // Start at bottom of parent node
+    ctx.lineTo(x2, y2 - NODE_RADIUS);  // End at top of child node
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+}

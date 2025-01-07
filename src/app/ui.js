@@ -2,8 +2,6 @@ export function initializeUI() {
     const visualTypeSelect = document.getElementById('visualType');
     const algoSelect = document.getElementById('algo-group');
     const dataStructureSelect = document.getElementById('data-structure-group');
-    const treeSelect = document.getElementById('tree-group');
-    const graphSelect = document.getElementById('graph-group');
 
     const continueBtn = document.getElementById('continueBtn');
     const stopBtn = document.getElementById('stopBtn');

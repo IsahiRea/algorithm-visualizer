@@ -1,5 +1,4 @@
 // Since JS doesn't have an implemented Heap DS, we must have a workaround.
-// Or to use another language
 
 import { stopVisual, isActive, startVisual, sleep, generateRandomArray} from '../shared/controls.js';
 import { drawHeap } from "../../canvas/heap.js";

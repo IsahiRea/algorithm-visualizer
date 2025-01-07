@@ -1,6 +1,6 @@
 import { initializeUI } from './ui.js';
 import { handleSelection } from './router.js';
-import { stopVisual, startVisual } from '../data/shared/controls.js';
+import { stopVisual, startVisual, isActive, sleep } from '../data/shared/controls.js';
 
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
@@ -11,7 +11,14 @@ initializeUI();
 
 // Event listener to start visualization
 startBtn.addEventListener('click', () => {
+
+    if (isActive()) {
+        alert('Visualization is already active.');
+        return;
+    }
+
     handleSelection(); // Delegate the task of handling the selection
+
 });
 
 // Stop button listener
@@ -19,5 +26,3 @@ stopBtn.addEventListener('click', stopVisual);
 
 // Continue button listener
 continueBtn.addEventListener('click', startVisual);
-
-//TODO: Clear Canvas when selecting a fresh option
