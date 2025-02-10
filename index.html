@@ -1,77 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Structures & Algorithms Visualizer</title>
-    <link rel="stylesheet" href="src/assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Data Structures & Algorithms Visualizer</title>
+        <link rel="stylesheet" href="src/assets/css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>
 
-<main class="container">
-    <header>
-        <h1>Data Structures & Algorithms Visualizer</h1>
-    </header>
+        <main class="container">
+            <div class="heading">
+                <h1>Data Structures & Algorithms Visualizer</h1>
+            </div>
 
-    <div class="controls">
-        <div class="control-group">
-            <label for="visualType">Choose:</label>
-            <select id="visualType">
-                <option value="algorithm">Algorithm</option>
-                <option value="dataStructure">Data Structure</option>
-            </select>
-        </div>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="visualType">Choose:</label>
+                    <select id="visualType">
+                        <option value="algorithm">Algorithm</option>
+                        <option value="dataStructure">Data Structure</option>
+                    </select>
+                </div>
 
-        <div class="control-group" id="algo-group">
-            <label for="algo">Pick:</label>
-            <select id="algo">
-                <option value="bubbleSort">Bubble Sort</option>
-                <option value="selectionSort">Selection Sort</option>
-                <option value="insertionSort">Insertion Sort</option>
-                <option value="quickSort">Quick Sort</option>
-                <option value="mergeSort">Merge Sort</option>
-                <option value="heapSort">Heap Sort</option>
-                <option value="shellSort">Shell Sort</option>
-                <option value="radixSort">Radix Sort</option>
-                <option value="bucketSort">Bucket Sort</option>
-                <option value="countingSort">Counting Sort</option>
-                <option value="cocktailShakerSort">Cocktail Shaker Sort</option>
-                <option value="combSort">Comb Sort</option>
-                <option value="gnomeSort">Gnome Sort</option>
-                <option value="pancakeSort">Pancake Sort</option>
-            </select>
-        </div>
+                <div class="control-group" id="algo-group">
+                    <label for="algo">Pick:</label>
+                    <select id="algo"></select>
+                </div>
 
-        <div class="control-group" id="data-structure-group">
-            <label for="dataStructure">Pick:</label>
-            <select id="dataStructure">
-                <option value="stack">Stack</option>
-                <option value="queue">Queue</option>
-                <option value="linkedList">Linked List</option>
-                <option value="hashTable">Hash Table</option>
-                <option value="BST">Binary Search Tree</option>
-                <option value="heap">Heap</option>
-                <option value="graph">Graph</option>
-                
-            </select>
-        </div>
+                <div class="control-group" id="data-structure-group">
+                    <label for="dataStructure">Pick:</label>
+                    <select id="dataStructure"></select>
+                </div>
 
-        <div class="buttons">
-            <button id="startBtn" class="btn">Start Visualization</button>
-            <button id="stopBtn" class="btn btn-danger">Stop Visualization</button>
-            <button id="continueBtn" class="btn btn-continue">Continue Visualization</button>
-        </div>
-    </div>
+                <div class="buttons">
+                    <button id="startBtn" class="btn">Start Visualization</button>
+                    <button id="stopBtn" class="btn btn-danger">Stop Visualization</button>
+                    <button id="continueBtn" class="btn btn-continue">Continue Visualization</button>
+                </div>
+            </div>
 
-    <canvas id="visualizerCanvas" width="800" height="400"></canvas>
+            <canvas id="visualizerCanvas" width="800" height="400"></canvas>
 
-    <footer>
-        <p>© 2024 Data Structures & Algorithms Visualizer</p>
-    </footer>
-</main>
+        </main>
 
-<script type="module" src="src/app/main.js"></script>
+        <script type="module" src="src/app/main.js"></script>
 
-</body>
+    </body>
 </html>
