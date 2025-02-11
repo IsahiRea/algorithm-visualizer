@@ -20,4 +20,16 @@ export function generateRandomArray(size = 20, maxValue = 100) {
     return Array.from({ length: size }, () => Math.floor(Math.random() * maxValue));
 }
 
-//TODO: Create a function that check if visual is active
+export function startTimer() {
+    const timer = document.getElementById('timer');
+    let time = 0;
+    const interval = setInterval(() => {
+        time++;
+        timer.textContent = `Time: ${time}s`;
+        if (!isRunning) {
+            clearInterval(interval);
+            timer.textContent = '';
+        }
+    }, 1000);
+
+}

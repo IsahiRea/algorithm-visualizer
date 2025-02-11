@@ -1,6 +1,6 @@
 import { initializeUI } from './ui.js';
 import { handleSelection } from './router.js';
-import { stopVisual, startVisual, isActive, sleep } from '../data/shared/controls.js';
+import { stopVisual, startVisual, isActive, startTimer } from '../data/shared/controls.js';
 
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
@@ -24,12 +24,17 @@ function populateDropdown(selectElement, options) {
 
     // Create an option element for each algorithm
     options.forEach(option => {
-        //TODO: Is there a better way to create an option element?
         const opt = document.createElement('option');
         opt.value = option;
+        
+        let optionText = option;
 
         // Add spaces between capital letters
-        opt.textContent = option.replace(/([A-Z])/g, ' $1').trim();
+        optionText = optionText.replace(/([A-Z])/g, ' $1').trim();
+
+        // Capitalize the first letter of the option
+        opt.textContent = optionText.charAt(0).toUpperCase() + optionText.slice(1);
+
         selectElement.appendChild(opt);
     });
 }
@@ -49,6 +54,8 @@ startBtn.addEventListener('click', () => {
         return;
     }
 
+    // Start the Timer
+    startTimer();
     handleSelection(); // Delegate the task of handling the selection
 });
 
