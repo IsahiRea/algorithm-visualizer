@@ -38,8 +38,4 @@ export function initializeUI() {
 
     stopBtn.style.display = 'block';
     continueBtn.style.display = 'none';
-
-
-
-
 }

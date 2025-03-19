@@ -1,6 +1,6 @@
 import { initializeUI } from './ui.js';
 import { handleSelection } from './router.js';
-import { stopVisual, startVisual, isActive, startTimer } from '../data/shared/controls.js';
+import { stopVisual, startVisual, pauseVisual, isActive, isCompleted, startTimer } from '../data/shared/controls.js';
 
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
@@ -49,18 +49,34 @@ initializeUI();
 // Event listener to start visualization
 startBtn.addEventListener('click', () => {
     // Clear the visualization if it's already running
-    if (isActive()) {
-        alert('Visualization is already running. Please stop it first.');
-        return;
-    }
+    startBtn.disabled = true;
+    startBtn.style.cursor = 'not-allowed';
+
+    dataStructureDropdown.disabled = true;
+    algoDropdown.disabled = true;
 
     // Start the Timer
     startTimer();
     handleSelection(); // Delegate the task of handling the selection
+
+    let duration = setInterval(() => {
+
+        if (isCompleted()) {
+            startBtn.disabled = false;
+            startBtn.style.cursor = 'pointer';
+
+            dataStructureDropdown.disabled = false;
+            algoDropdown.disabled = false;
+
+            clearInterval(duration);
+        }
+
+    }, 1000);
+
 });
 
 // Stop button listener
-stopBtn.addEventListener('click', stopVisual);
+stopBtn.addEventListener('click', pauseVisual);
 
 // Continue button listener
 continueBtn.addEventListener('click', startVisual);

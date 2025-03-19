@@ -47,6 +47,9 @@ h1 {
 
 .control-group {
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 label {
@@ -75,7 +78,8 @@ select:focus {
 }
 
 button.btn {
-    padding: 10px 20px;
+    align-self: center;
+    padding: 20px 20px;
     font-size: 1rem;
     color: white;
     background-color: #007bff;

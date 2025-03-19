@@ -1,15 +1,25 @@
 let isRunning = false;
+let completed = true;
 
 export function stopVisual() {
-    isRunning = false;
+    completed = true;
 }
 
-export function isActive() {
-    return isRunning;
+export function pauseVisual() {
+    isRunning = false;
 }
 
 export function startVisual() {
     isRunning = true;
+    completed = false;
+}
+
+export function isCompleted() {
+    return completed;
+}
+
+export function isActive() {
+    return isRunning;
 }
 
 export function sleep(ms) {
@@ -24,12 +34,21 @@ export function startTimer() {
     const timer = document.getElementById('timer');
     let time = 0;
     const interval = setInterval(() => {
-        time++;
-        timer.textContent = `Time: ${time}s`;
-        if (!isRunning) {
+        
+        if (!isActive()) {
+            timer.textContent = `Time: ${time}s (PAUSED)`; // Reset the timer
+        }
+        
+        if (isCompleted()) {
             clearInterval(interval);
             timer.textContent = '';
         }
+
+        if (isActive()) {
+            time++;
+            timer.textContent = `Time: ${time}s`;
+        }
+
     }, 1000);
 
 }
