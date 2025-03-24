@@ -73,11 +73,9 @@ This project is a web-based visualizer for algorithms like Bubble Sort, Selectio
 ---
 
 ## Future Improvements
-- Add more sorting and searching algorithms.
 - Enable user input for custom array sizes and values.
 - Include speed control for faster or slower visualization.
-- Add more data structures and enhance their interactivity.
-
+- Migrate codebase to use React
 ---
 
 ## Contributing
